@@ -22,7 +22,7 @@ function HomeScreen() {
   }, [params, count, data]);
   const dateHandler = (e) => {
     if (e.target.name === "date") {
-      // setUrl("https://hn.algolia.com/api/v1/search_by_date?tags=story");
+      setUrl("https://hn.algolia.com/api/v1/search_by_date?tags=story");
       setDate("Date");
     } else {
       setDate("Popularity");
@@ -32,7 +32,6 @@ function HomeScreen() {
   const handler = (e) => {
     e.preventDefault();
     let value = String(e.target.value);
-
     setParams((prev) => {
       return {
         ...prev,
@@ -43,20 +42,20 @@ function HomeScreen() {
   const tagHandler = (e) => {
     let value = String(e.target.name);
     if (value !== "All") {
-      // setParams((prev) => {
-      //   return {
-      //     ...prev,
-      //     tags: value,
-      //   };
-      // });
+      setParams((prev) => {
+        return {
+          ...prev,
+          tags: value,
+        };
+      });
       setName(e.target.name);
     } else {
-      // setParams((prev) => {
-      //   return {
-      //     ...prev,
-      //     tags: "story",
-      //   };
-      // });
+      setParams((prev) => {
+        return {
+          ...prev,
+          tags: "story",
+        };
+      });
 
       setName(e.target.name);
     }
