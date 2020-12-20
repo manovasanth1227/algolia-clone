@@ -22,7 +22,7 @@ function HomeScreen() {
   }, [params, count, data]);
   const dateHandler = (e) => {
     if (e.target.name === "date") {
-      setUrl("https://hn.algolia.com/api/v1/search_by_date?tags=story");
+      // setUrl("https://hn.algolia.com/api/v1/search_by_date?tags=story");
       setDate("Date");
     } else {
       setDate("Popularity");
@@ -51,6 +51,13 @@ function HomeScreen() {
       });
       setName(e.target.name);
     } else {
+      setParams((prev) => {
+        return {
+          ...prev,
+          tags: "story",
+        };
+      });
+
       setName(e.target.name);
     }
   };
