@@ -51,13 +51,6 @@ function HomeScreen() {
       });
       setName(e.target.name);
     } else {
-      setParams((prev) => {
-        return {
-          ...prev,
-          tags: "story",
-        };
-      });
-
       setName(e.target.name);
     }
   };
