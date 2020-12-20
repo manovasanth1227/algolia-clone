@@ -43,20 +43,20 @@ function HomeScreen() {
   const tagHandler = (e) => {
     let value = String(e.target.name);
     if (value !== "All") {
-      setParams((prev) => {
-        return {
-          ...prev,
-          tags: value,
-        };
-      });
+      // setParams((prev) => {
+      //   return {
+      //     ...prev,
+      //     tags: value,
+      //   };
+      // });
       setName(e.target.name);
     } else {
-      setParams((prev) => {
-        return {
-          ...prev,
-          tags: "story",
-        };
-      });
+      // setParams((prev) => {
+      //   return {
+      //     ...prev,
+      //     tags: "story",
+      //   };
+      // });
 
       setName(e.target.name);
     }
